@@ -1,5 +1,12 @@
-body{font-family:Arial;padding:15px;max-width:600px;margin:auto}button{padding:10px;margin:5px}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:8px}.S1{background:#dbeafe}.S2{background:#dcfce7}.S3{background:#fed7aa}
-/* Ajouter ces règles (par ex. à la fin de style.css) pour mettre en évidence la ligne du jour */
+body{font-family:Arial;padding:15px;max-width:600px;margin:auto}
+button{padding:10px;margin:5px}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid #ccc;padding:8px}
+.S1{background:#dbeafe}
+.S2{background:#dcfce7}
+.S3{background:#fed7aa}
+
+/* Mettre en évidence la ligne du jour sans écraser les styles de semaine */
 tr.today { background: #fff7b2; } /* fond jaune pâle */
 tr.today td { font-weight: 700; }
 table thead th { text-align: left; background:#f0f0f0; }
