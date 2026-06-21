@@ -1,14 +1,5 @@
-/* couleurs par semaine appliquées aux cellules pour être sûrs qu'on voit la couleur */
-.S1 td { background: #dbeafe; }
-.S2 td { background: #dcfce7; }
-.S3 td { background: #fed7aa; }
-
+body{font-family:Arial;padding:15px;max-width:600px;margin:auto}
+button{padding:10px;margin:5px}table{width:100%;border-collapse:collapse}
+td,th{border:1px solid #ccc;padding:8px}.S1{background:#dbeafe}.S2{background:#dcfce7}.S3{background:#fed7aa}
 /* Mettre seulement en évidence le jour courant par du texte en gras (pas de fond) */
 tr.today td { font-weight: 700; color: #000; }
-
-/* reste du style existant */
-body{font-family:Arial;padding:15px;max-width:600px;margin:auto}
-button{padding:10px;margin:5px}
-table{width:100%;border-collapse:collapse}
-td,th{border:1px solid #ccc;padding:8px}
-table thead th { text-align: left; background:#f0f0f0; }
