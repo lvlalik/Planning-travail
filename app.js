@@ -22,7 +22,8 @@ function render(d){
   const startOfWeek = new Date(d);
   startOfWeek.setDate(d.getDate() - dayIndex); // date du lundi de la semaine
 
-  let html = '<table><thead><tr><th>Jour</th><th>Date</th><th>Planning</th></tr></thead><tbody>';
+  // on applique la classe de semaine sur le tableau pour préserver vos styles .S1/.S2/.S3
+  let html = `<table class="${s}"><thead><tr><th>Jour</th><th>Date</th><th>Planning</th></tr></thead><tbody>`;
   for (let i = 0; i < 7; i++) {
     const dayDate = new Date(startOfWeek);
     dayDate.setDate(startOfWeek.getDate() + i);
