@@ -1,0 +1,8 @@
+const reference=new Date('2026-06-22');
+const planning={S1:['09h-17h30','09h-12h','Repos','Repos','09h-17h','Repos','Repos'],S2:['Repos','09h-17h30','Repos','09h-12h','09h-17h','Repos','Repos'],S3:['Repos','09h-12h','Repos','09h-17h','09h-17h','Repos','Repos']};
+let current=new Date();
+function getWeekType(d){let diff=Math.floor((d-reference)/(1000*60*60*24));let w=Math.floor(diff/7);return ['S1','S2','S3'][((w%3)+3)%3]}
+function render(d){let s=getWeekType(d);let day=(d.getDay()+6)%7;document.getElementById('resume').innerHTML=`<h2>${d.toLocaleDateString('fr-FR')}</h2><p>${s}</p><p>${planning[s][day]}</p><p>Semaine suivante : ${['S1','S2','S3'][(['S1','S2','S3'].indexOf(s)+1)%3]}</p>`;let monday=new Date(d);monday.setDate(d.getDate()-day);let html=`<table class='${s}'><tr><th>Jour</th><th>Horaire</th></tr>`;let jours=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];for(let i=0;i<7;i++){let dd=new Date(monday);dd.setDate(monday.getDate()+i);let ss=getWeekType(dd);html+=`<tr><td>${jours[i]}</td><td>${planning[ss][i]}</td></tr>`}html+='</table>';document.getElementById('calendar').innerHTML=html}
+function goToday(){current=new Date();document.getElementById('datePicker').value=current.toISOString().split('T')[0];render(current)}
+function changeWeek(n){current.setDate(current.getDate()+7*n);document.getElementById('datePicker').value=current.toISOString().split('T')[0];render(current)}
+document.getElementById('datePicker').addEventListener('change',e=>{current=new Date(e.target.value);render(current)});goToday();

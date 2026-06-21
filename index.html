@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mon Planning</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>📅 Mon Planning</h1>
+<button onclick="goToday()">Aujourd'hui</button>
+<input type="date" id="datePicker">
+<div id="resume"></div>
+<div>
+<button onclick="changeWeek(-1)">◀</button>
+<button onclick="goToday()">Semaine courante</button>
+<button onclick="changeWeek(1)">▶</button>
+</div>
+<div id="calendar"></div>
+<script src="app.js"></script>
+</body>
+</html>
